@@ -14,8 +14,13 @@ public class Esercizio3 {
         String s = scanner.nextLine();
 
         while(!s.equals(":q") ) {
-            for(int i = 0; i < s.length(); i++) {
-                System.out.print(s.charAt(i) + ",");
+            for(int i = 0; i < s.length() ; i++) {
+                if( i != s.length() - 1) {
+                    System.out.print(s.charAt(i) + ",");
+                } else {
+                    System.out.print(s.charAt(i));
+                }
+
             }
             System.out.println();
             System.out.println("Inserisci stringa");
