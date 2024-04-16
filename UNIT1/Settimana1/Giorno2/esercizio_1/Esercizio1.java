@@ -27,7 +27,13 @@ public class Esercizio1 {
 
         int anno = scanner.nextInt();
 
-        System.out.println(annoBisestile(anno));
+        if(annoBisestile(anno)) {
+            System.out.println("anno bisestile");
+        } else {
+            System.out.println("anno non bisestile");
+        }
+
+
 
 
     }
