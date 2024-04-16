@@ -17,12 +17,11 @@ public class Esercizio1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-/*
         System.out.println("Inserisci stringa");
 
         String s = scanner.nextLine();
 
-        System.out.println(stringaPariDispari(s));*/
+        System.out.println(stringaPariDispari(s));
 
         System.out.println("Inserisci anno");
 
