@@ -4,13 +4,15 @@ import java.util.Date;
 
 public class Cliente {
     private String codiceCli;
-    private String nomeECognome;
+    private String nome;
+    private String cognome;
     private String email;
     private Date dataIscriz;
 
-    public Cliente(String codiceCli, String nomeECognome, String email, Date dataIscriz ){
+    public Cliente(String codiceCli, String nome, String cognome, String email, Date dataIscriz) {
         this.codiceCli = codiceCli;
-        this.nomeECognome = nomeECognome;
+        this.nome = nome;
+        this.cognome = cognome;
         this.email = email;
         this.dataIscriz = dataIscriz;
     }
@@ -23,12 +25,20 @@ public class Cliente {
         this.codiceCli = codiceCli;
     }
 
-    public String getNomeECognome() {
-        return nomeECognome;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeECognome(String nomeECognome) {
-        this.nomeECognome = nomeECognome;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
     }
 
     public String getEmail() {
@@ -43,7 +53,7 @@ public class Cliente {
         return dataIscriz;
     }
 
-    public void setDataIscriz(Date  dataIscriz) {
+    public void setDataIscriz(Date dataIscriz) {
         this.dataIscriz = dataIscriz;
     }
 }

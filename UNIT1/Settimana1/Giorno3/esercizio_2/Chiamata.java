@@ -4,7 +4,7 @@ public class Chiamata {
     private double minutiChiamata;
     private String numeroChiamato;
 
-    public Chiamata(double minutiChiamata, String numeroChiamato){
+    public Chiamata(double minutiChiamata, String numeroChiamato) {
         this.minutiChiamata = minutiChiamata;
         this.numeroChiamato = numeroChiamato;
     }
@@ -17,4 +17,11 @@ public class Chiamata {
         return numeroChiamato;
     }
 
+    public void setMinutiChiamata(double minutiChiamata) {
+        this.minutiChiamata = minutiChiamata;
+    }
+
+    public void setNumeroChiamato(String numeroChiamato) {
+        this.numeroChiamato = numeroChiamato;
+    }
 }
