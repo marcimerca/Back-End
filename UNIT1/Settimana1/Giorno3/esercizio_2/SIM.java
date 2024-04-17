@@ -26,6 +26,10 @@ public class SIM {
 
     }
 
+    public void ricarica(int ricarica){
+        this.credito += ricarica;
+    }
+
 
     public void aggiungiChiamata(Chiamata chiamata) {
         listaChiamate.add(chiamata);
@@ -33,7 +37,11 @@ public class SIM {
     }
 
     public void stampaListaChiamate() {
-        for (int i = 0; i < listaChiamate.size(); i++) {
+        int numeroChiamateDaStampare = listaChiamate.size();
+        if(numeroChiamateDaStampare >5) {
+            numeroChiamateDaStampare = 5;
+        }
+        for (int i = 0; i < numeroChiamateDaStampare; i++) {
             Chiamata chiamata = listaChiamate.get(i);
             System.out.println("Chiamata " + (i+1) + ": Durata = " + chiamata.getMinutiChiamata() + " minuti, Numero chiamato = " + chiamata.getNumeroChiamato());
         }

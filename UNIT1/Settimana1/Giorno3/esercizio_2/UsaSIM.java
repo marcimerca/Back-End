@@ -14,5 +14,10 @@ public class UsaSIM {
         sim1.aggiungiChiamata(chiamata2);
 
         sim1.StampaDati();
+
+        sim1.ricarica(5);
+
+
+        sim1.StampaDati();
     }
 }
