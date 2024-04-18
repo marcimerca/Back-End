@@ -1,4 +1,4 @@
-package esercizio_1;
+package esercizio;
 
 public enum Dipartimento {
     PRODUZIONE,

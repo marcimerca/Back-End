@@ -1,6 +1,6 @@
-package esercizio_1;
+package esercizio;
 
-public class Dipendente {
+public abstract class Dipendente {
     private String matricola;
     private double stipendio;
     private Dipartimento dipartimento;
@@ -26,4 +26,9 @@ public class Dipendente {
     public void setDipartimento(Dipartimento dipartimento) {
         this.dipartimento = dipartimento;
     }
+
+    public double calcolaSalario(){
+        return getStipendio();
+    };
+
 }
