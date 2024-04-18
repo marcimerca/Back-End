@@ -21,9 +21,9 @@ public class UsaDipendente {
         Dipendente dipendente1 = new DipendenteFullTime("0123",5000,Dipartimento.PRODUZIONE);
         Dipendente dipendente2 = new DipendentePartTime("0124",Dipartimento.VENDITE, 30, 20);
 
-        Dipendente dipendeten3 = new Dirigente("1111",10000, Dipartimento.AMMINISTRAZIONE, 3000);
+        Dipendente dipendete3 = new Dirigente("1111",10000, Dipartimento.AMMINISTRAZIONE, 3000);
 
-        Dipendente[] dipendenti = {dipendente1,dipendente2,dipendeten3};
+        Dipendente[] dipendenti = {dipendente1,dipendente2,dipendete3};
 
 
         double sommaStipendi = 0;
@@ -33,6 +33,33 @@ public class UsaDipendente {
         }
 
         System.out.println(sommaStipendi);
+
+
+        // Parte esercizio 3
+
+
+
+
+
+        Dipendente dipendente4 = new DipendenteFullTime("0123",5000,Dipartimento.PRODUZIONE);
+        Dipendente dipendente5 = new DipendentePartTime("0124",Dipartimento.VENDITE, 30, 20);
+
+        Dipendente dipendente6 = new Dirigente("1111",10000, Dipartimento.AMMINISTRAZIONE, 3000);
+
+        Volontario volontario1 = new Volontario("Mario", 30, "Disponibile");
+        Volontario volontario2 = new Volontario("Giovanni", 50, "Disponibile");
+
+        GestioneTurno[] dipendentiEVolontari = {dipendente4, dipendente5, dipendente6, volontario1, volontario2};
+
+        for(int i = 0; i< dipendentiEVolontari.length; i++) {
+            dipendentiEVolontari[i].checkIn();
+        }
+
+
+
+
+
+
 
 
 

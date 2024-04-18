@@ -1,6 +1,6 @@
 package esercizio;
 
-public abstract class Dipendente {
+public abstract class Dipendente implements GestioneTurno {
     private String matricola;
     private double stipendio;
     private Dipartimento dipartimento;
@@ -31,4 +31,8 @@ public abstract class Dipendente {
         return getStipendio();
     };
 
+    @Override
+    public void checkIn() {
+        System.out.println("Il dipendente con matricola: " + this.getMatricola() + " ha iniziato il turno.");
+    }
 }
