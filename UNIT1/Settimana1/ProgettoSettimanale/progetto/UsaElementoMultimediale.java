@@ -46,6 +46,30 @@ public class UsaElementoMultimediale {
                     inserisciInArray(elementi, audio, elementiCreati);
                     elementiCreati++;
                     break;
+                case "video":
+                    System.out.println("Inserisci titolo video:");
+                    String titoloVideo = scanner.nextLine();
+                    System.out.println("Inserisci durata video:");
+                    int durataVideo= scanner.nextInt();
+                    System.out.println("Inserisci volume video:");
+                    int volumeVideo= scanner.nextInt();
+                    System.out.println("Inserisci luminosità video:");
+                    int luminositaVideo= scanner.nextInt();
+                    scanner.nextLine();
+                   Video video= new Video(titoloVideo, durataVideo, volumeVideo, luminositaVideo);
+                    inserisciInArray(elementi, video, elementiCreati);
+                    elementiCreati++;
+                    break;
+                case "immagine":
+                    System.out.println("Inserisci titolo immagine:");
+                    String titoloImmagine = scanner.nextLine();
+                    System.out.println("Inserisci luminosità immagine:");
+                    int luminositaImmagine= scanner.nextInt();
+                    scanner.nextLine();
+                   Immagine immagine= new Immagine(titoloImmagine, luminositaImmagine);
+                    inserisciInArray(elementi, immagine, elementiCreati);
+                    elementiCreati++;
+                    break;
                 default:
                     System.out.println("Tipo di elemento non supportato.");
             }
@@ -59,6 +83,8 @@ public class UsaElementoMultimediale {
         }
 
         System.out.println(elementi);
+
+
     }
 
     public static void inserisciInArray(ElementoMultimediale[] elementi, ElementoMultimediale elemento, int elementiCreati) {
@@ -66,7 +92,6 @@ public class UsaElementoMultimediale {
         System.out.println("Elemento inserito correttamente.");
 
     }
-
 
 
 
