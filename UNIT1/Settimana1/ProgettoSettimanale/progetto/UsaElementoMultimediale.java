@@ -25,10 +25,49 @@ public class UsaElementoMultimediale {
 //        */
 
 
+        int elementiCreati = 0;
 
+        ElementoMultimediale[] elementi = new ElementoMultimediale[5];
 
+        while (elementiCreati < 5) {
+            System.out.println("Inserisci la parola video se vuoi creare un elemento video, audio per creare una registrazione audio e immagine per creare un'immagine:");
+            String tipoElemento = scanner.nextLine();
 
+            switch (tipoElemento) {
+                case "audio":
+                    System.out.println("Inserisci titolo audio:");
+                    String titoloAudio = scanner.nextLine();
+                    System.out.println("Inserisci durata audio:");
+                    int durataAudio = scanner.nextInt();
+                    System.out.println("Inserisci volume audio:");
+                    int volumeAudio = scanner.nextInt();
+                    scanner.nextLine();
+                    RegistrazioneAudio audio = new RegistrazioneAudio(titoloAudio, durataAudio, volumeAudio);
+                    inserisciInArray(elementi, audio, elementiCreati);
+                    elementiCreati++;
+                    break;
+                default:
+                    System.out.println("Tipo di elemento non supportato.");
+            }
 
+            if (elementiCreati == 5) {
+               for(int i = 0; i <elementi.length; i++) {
+                   System.out.println(elementi[i].getTitolo());
+               }
+                scanner.close();
+            }
+        }
+
+        System.out.println(elementi);
+    }
+
+    public static void inserisciInArray(ElementoMultimediale[] elementi, ElementoMultimediale elemento, int elementiCreati) {
+        elementi[elementiCreati] = elemento;
+        System.out.println("Elemento inserito correttamente.");
 
     }
+
+
+
+
 }
