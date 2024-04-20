@@ -4,45 +4,33 @@ import java.util.Scanner;
 
 public class UsaElementoMultimediale {
     public static void main(String[] args) {
-     /*   RegistrazioneAudio elemento1 = new RegistrazioneAudio("prova",3,10);
-        elemento1.play();
-
-        Video elemento2 = new Video("prova",3,10, 50);
-        elemento2.play();
-*/
 
         Scanner scanner = new Scanner(System.in);
-
-
-       /* ElementoMultimediale elemento1 = new RegistrazioneAudio("audio", 3,10);
-        ElementoMultimediale elemento2 = new Video("video", 3,10, 50);
-        ElementoMultimediale elemento3 = new Immagine("immag", 3);
-
-        ElementoMultimediale[] elementi = {elemento1, elemento2, elemento3};
-*/
-//      /* *//* ElementoMultimediale[] elementi = new ElementoMultimediale[5];*//*
-//        System.out.println("Inserire titolo");
-//        */
-
 
         int elementiCreati = 0;
 
         ElementoMultimediale[] elementi = new ElementoMultimediale[5];
 
         while (elementiCreati < 5) {
-            System.out.println("Inserisci video se vuoi creare un elemento video,");
-            System.out.println("audio per creare una registrazione audio,");
-            System.out.println("e immagine per creare un'immagine.");
+            System.out.println("Inserisci la parola 'video' se vuoi creare un elemento video,");
+            System.out.println("'audio' per creare una registrazione audio,");
+            System.out.println("e 'immagine' per creare un'immagine.");
             String tipoElemento = scanner.nextLine();
 
             switch (tipoElemento) {
                 case "audio":
                     System.out.println("Inserisci titolo audio:");
                     String titoloAudio = scanner.nextLine();
-                    System.out.println("Inserisci durata audio:");
-                    int durataAudio = scanner.nextInt();
-                    System.out.println("Inserisci volume audio:");
-                    int volumeAudio = scanner.nextInt();
+                    int durataAudio;
+                    do {
+                        System.out.println("Inserisci durata audio (valore positivo, valori negativi non permessi):");
+                        durataAudio = scanner.nextInt();
+                    } while (durataAudio <= 0);
+                    int volumeAudio;
+                    do {
+                        System.out.println("Inserisci volume audio (valore positivo, valori negativi non permessi):");
+                        volumeAudio = scanner.nextInt();
+                    } while (volumeAudio <= 0);
                     scanner.nextLine();
                     RegistrazioneAudio audio = new RegistrazioneAudio(titoloAudio, durataAudio, volumeAudio);
                     inserisciInArray(elementi, audio, elementiCreati);
@@ -51,12 +39,21 @@ public class UsaElementoMultimediale {
                 case "video":
                     System.out.println("Inserisci titolo video:");
                     String titoloVideo = scanner.nextLine();
-                    System.out.println("Inserisci durata video:");
-                    int durataVideo = scanner.nextInt();
-                    System.out.println("Inserisci volume video:");
-                    int volumeVideo = scanner.nextInt();
-                    System.out.println("Inserisci luminosità video:");
-                    int luminositaVideo = scanner.nextInt();
+                    int durataVideo;
+                    do {
+                        System.out.println("Inserisci durata video (possibile solo valore positivo):");
+                        durataVideo = scanner.nextInt();
+                    } while (durataVideo <= 0);
+                    int volumeVideo;
+                    do {
+                        System.out.println("Inserisci volume video (possibile solo valore positivo):");
+                        volumeVideo = scanner.nextInt();
+                    } while (volumeVideo <= 0);
+                    int luminositaVideo;
+                    do {
+                        System.out.println("Inserisci luminosità video (possibile solo valore positivo):");
+                        luminositaVideo = scanner.nextInt();
+                    } while (luminositaVideo <= 0);
                     scanner.nextLine();
                     Video video = new Video(titoloVideo, durataVideo, volumeVideo, luminositaVideo);
                     inserisciInArray(elementi, video, elementiCreati);
@@ -65,8 +62,11 @@ public class UsaElementoMultimediale {
                 case "immagine":
                     System.out.println("Inserisci titolo immagine:");
                     String titoloImmagine = scanner.nextLine();
-                    System.out.println("Inserisci luminosità immagine:");
-                    int luminositaImmagine = scanner.nextInt();
+                    int luminositaImmagine;
+                    do {
+                        System.out.println("Inserisci luminosità immagine (possibile solo valore positivo):");
+                        luminositaImmagine = scanner.nextInt();
+                    } while (luminositaImmagine <= 0);
                     scanner.nextLine();
                     Immagine immagine = new Immagine(titoloImmagine, luminositaImmagine);
                     inserisciInArray(elementi, immagine, elementiCreati);
@@ -121,3 +121,4 @@ public class UsaElementoMultimediale {
 
 
 }
+
