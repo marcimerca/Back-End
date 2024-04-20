@@ -23,12 +23,12 @@ public class UsaElementoMultimediale {
                     String titoloAudio = scanner.nextLine();
                     int durataAudio;
                     do {
-                        System.out.println("Inserisci durata audio (valore positivo, valori negativi non permessi):");
+                        System.out.println("Inserisci durata audio (possibile solo valore positivo):");
                         durataAudio = scanner.nextInt();
                     } while (durataAudio <= 0);
                     int volumeAudio;
                     do {
-                        System.out.println("Inserisci volume audio (valore positivo, valori negativi non permessi):");
+                        System.out.println("Inserisci volume audio (possibile solo valore positivo):");
                         volumeAudio = scanner.nextInt();
                     } while (volumeAudio <= 0);
                     scanner.nextLine();
