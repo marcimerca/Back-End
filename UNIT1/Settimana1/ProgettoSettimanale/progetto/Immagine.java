@@ -21,7 +21,7 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
 
 
     public void show() {
-        System.out.println(this.getTitolo() +  stampaAsterischi());
+        System.out.println(this.getTitolo() + " " + stampaAsterischi());
     }
 
     public String stampaAsterischi(){

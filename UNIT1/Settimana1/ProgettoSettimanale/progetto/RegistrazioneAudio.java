@@ -31,7 +31,7 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     @Override
     public void play() {
         for (int i = 0; i < durata; i++) {
-            System.out.println(this.getTitolo() + (stampaPuntiEsclamativi()));
+            System.out.println(this.getTitolo() + " " + (stampaPuntiEsclamativi()));
         }
     }
 
@@ -46,7 +46,6 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     @Override
     public void alzaVolume() {
         this.volume++;
-
     }
 
     @Override
