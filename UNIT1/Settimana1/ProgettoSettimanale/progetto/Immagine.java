@@ -32,5 +32,8 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
         return stringa;
     }
 
-
+    @Override
+    public void chiamaMetodo() {
+        this.show();
+    }
 }

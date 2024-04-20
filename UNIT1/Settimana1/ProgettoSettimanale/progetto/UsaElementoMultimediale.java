@@ -30,7 +30,9 @@ public class UsaElementoMultimediale {
         ElementoMultimediale[] elementi = new ElementoMultimediale[5];
 
         while (elementiCreati < 5) {
-            System.out.println("Inserisci la parola video se vuoi creare un elemento video, audio per creare una registrazione audio e immagine per creare un'immagine:");
+            System.out.println("Inserisci video se vuoi creare un elemento video,");
+            System.out.println("audio per creare una registrazione audio,");
+            System.out.println("e immagine per creare un'immagine.");
             String tipoElemento = scanner.nextLine();
 
             switch (tipoElemento) {
@@ -50,13 +52,13 @@ public class UsaElementoMultimediale {
                     System.out.println("Inserisci titolo video:");
                     String titoloVideo = scanner.nextLine();
                     System.out.println("Inserisci durata video:");
-                    int durataVideo= scanner.nextInt();
+                    int durataVideo = scanner.nextInt();
                     System.out.println("Inserisci volume video:");
-                    int volumeVideo= scanner.nextInt();
+                    int volumeVideo = scanner.nextInt();
                     System.out.println("Inserisci luminosità video:");
-                    int luminositaVideo= scanner.nextInt();
+                    int luminositaVideo = scanner.nextInt();
                     scanner.nextLine();
-                   Video video= new Video(titoloVideo, durataVideo, volumeVideo, luminositaVideo);
+                    Video video = new Video(titoloVideo, durataVideo, volumeVideo, luminositaVideo);
                     inserisciInArray(elementi, video, elementiCreati);
                     elementiCreati++;
                     break;
@@ -64,9 +66,9 @@ public class UsaElementoMultimediale {
                     System.out.println("Inserisci titolo immagine:");
                     String titoloImmagine = scanner.nextLine();
                     System.out.println("Inserisci luminosità immagine:");
-                    int luminositaImmagine= scanner.nextInt();
+                    int luminositaImmagine = scanner.nextInt();
                     scanner.nextLine();
-                   Immagine immagine= new Immagine(titoloImmagine, luminositaImmagine);
+                    Immagine immagine = new Immagine(titoloImmagine, luminositaImmagine);
                     inserisciInArray(elementi, immagine, elementiCreati);
                     elementiCreati++;
                     break;
@@ -74,16 +76,40 @@ public class UsaElementoMultimediale {
                     System.out.println("Tipo di elemento non supportato.");
             }
 
-            if (elementiCreati == 5) {
-               for(int i = 0; i <elementi.length; i++) {
-                   System.out.println(elementi[i].getTitolo());
-               }
-                scanner.close();
-            }
         }
 
-        System.out.println(elementi);
+        System.out.println("Hai creato correttamente 5 elementi");
 
+        int numero;
+        do {
+            System.out.println("Inserisci un numero da 1 a 5 per eseguire uno degli elementi appena creati, 0 per interrompere l'esecuzione");
+            numero = scanner.nextInt();
+            switch (numero) {
+                case 1:
+                    elementi[0].chiamaMetodo();
+                    break;
+                case 2:
+                    elementi[1].chiamaMetodo();
+                    break;
+                case 3:
+                    elementi[2].chiamaMetodo();
+                    break;
+                case 4:
+                    elementi[3].chiamaMetodo();
+                    break;
+                case 5:
+                    elementi[4].chiamaMetodo();
+                    break;
+                case 0:
+                    System.out.println("Esecuzione interrotta.");
+                    break;
+                default:
+                    System.out.println("Inserito numero non valido");
+
+            }
+
+        }
+        while (numero != 0);
 
     }
 
@@ -92,7 +118,6 @@ public class UsaElementoMultimediale {
         System.out.println("Elemento inserito correttamente.");
 
     }
-
 
 
 }

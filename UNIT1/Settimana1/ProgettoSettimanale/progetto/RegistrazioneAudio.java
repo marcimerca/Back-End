@@ -53,4 +53,8 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Riproduc
     public void abbassaVolume() {
         this.volume--;
     }
+
+    public void chiamaMetodo() {
+        this.play();
+    }
 }

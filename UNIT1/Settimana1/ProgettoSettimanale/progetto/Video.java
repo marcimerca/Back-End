@@ -31,13 +31,16 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
     @Override
     public void play() {
         for(int i =0; i < durata; i++) {
-            System.out.println(this.getTitolo() +  stampaAsterischi());
+            System.out.println(this.getTitolo() +  stampaPuntiEsclamativiAsterischi());
         }
     }
 
-    public String stampaAsterischi(){
+    public String stampaPuntiEsclamativiAsterischi(){
         String stringa = "";
         for(int i =0; i < volume; i++) {
+            stringa += "!";
+        }
+        for(int i = 0; i< luminosita; i++) {
             stringa += "*";
         }
         return stringa;
@@ -63,5 +66,10 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
     @Override
     public void diminuisciLuminosita() {
         this.luminosita--;
+    }
+
+    @Override
+    public void chiamaMetodo() {
+        this.play();
     }
 }
