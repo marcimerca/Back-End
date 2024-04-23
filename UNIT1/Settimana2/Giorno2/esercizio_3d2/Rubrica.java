@@ -29,9 +29,9 @@ public class Rubrica {
                 System.out.println(nome + " " + contatti.get(nome)); ;
             }
         }
+
+
     }
-
-
 
 
 

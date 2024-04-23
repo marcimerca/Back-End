@@ -20,6 +20,7 @@ public class Esercizio2 {
         System.out.println(listaModificata);
 
 
+                    stampaElementi(true, lista1);
 
     }
 
@@ -35,13 +36,32 @@ public class Esercizio2 {
 
     //classe collection è classe di utility, dà metodi aggiuntivi
 
-     public static ArrayList<Integer> restituisciListaModificata(ArrayList<Integer> array){
-         ArrayList<Integer> listaModificata = new ArrayList<>();
-         listaModificata.addAll(array); //fa append
-         Collections.reverse(array);
+    public static ArrayList<Integer> restituisciListaModificata(ArrayList<Integer> array) {
+        ArrayList<Integer> listaModificata = new ArrayList<>();
+        listaModificata.addAll(array); //fa append
 
-         listaModificata.addAll(array);
+        ArrayList<Integer> listaClone = new ArrayList<>(array);
 
-         return listaModificata;
-     }
+        
+        Collections.reverse(listaClone);
+
+        listaModificata.addAll(listaClone);
+
+        return listaModificata;
+    }
+
+
+    public static void stampaElementi(boolean b, ArrayList<Integer> lista) {
+        if (b) {
+            for (int i = 0; i < lista.size(); i = i + 2) {
+                System.out.println(lista.get(i));
+            }
+
+        } else {
+            for (int i = 1; i < lista.size(); i = i + 2) {
+                System.out.println(lista.get(i));
+            }
+        }
+    }
 }
+
