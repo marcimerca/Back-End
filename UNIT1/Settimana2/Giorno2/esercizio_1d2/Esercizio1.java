@@ -33,7 +33,6 @@ public class Esercizio1 {
         }
 
 
-
         System.out.println("Lista parole distinte: " + parole);
         System.out.println("Numero parole distinte: " + parole.size());
         System.out.println("Lista parole duplicate: " + paroleDuplicate);
