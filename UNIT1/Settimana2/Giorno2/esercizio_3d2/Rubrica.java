@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Rubrica {
-    private HashMap<String, Integer> contatti;
+    private HashMap<String, String> contatti;
 
     public Rubrica(){
-        contatti = new HashMap<String,Integer>();
+        contatti = new HashMap<>();
     }
 
-    public void aggiungiContatto( String nome, Integer numero){
+    public void aggiungiContatto( String nome, String numero){
         contatti.put(nome, numero);
     }
 
@@ -18,19 +18,23 @@ public class Rubrica {
         contatti.remove(nome);
     }
 
-    public Integer cercaContattoPerNome(String nome){
+    public String cercaContattoPerNome(String nome){
        return contatti.get(nome);
     }
 
-    public void cercaContattoDaNumero(Integer numero){
+    public String cercaContattoDaNumero(String numero){
         Set<String> nomi = contatti.keySet();
         for(String nome: nomi){
             if(contatti.get(nome).equals(numero)){
-                System.out.println(nome + " " + contatti.get(nome)); ;
+               return nome;
             }
         }
+        return null;
 
+    }
 
+    public void stampaRubrica(){
+        System.out.println(contatti);
     }
 
 
