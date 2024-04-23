@@ -11,11 +11,11 @@ public class Esercizio1 {
 
         System.out.println("Scrivi il numero di elementi che vuoi inserire");
         int numero = scanner.nextInt();
-
+        scanner.nextLine();
 
         HashSet<String> parole = new HashSet<>();
 
-        scanner.nextLine();
+
         String parola;
         ArrayList<String> paroleDuplicate = new ArrayList<>();
 
@@ -31,13 +31,12 @@ public class Esercizio1 {
 
 
         }
-        ArrayList<String> paroleDistinte = new ArrayList<>(parole);
-        paroleDistinte.removeAll(paroleDuplicate);
 
-        System.out.println("Lista parole: " + parole);
+
+
+        System.out.println("Lista parole distinte: " + parole);
+        System.out.println("Numero parole distinte: " + parole.size());
         System.out.println("Lista parole duplicate: " + paroleDuplicate);
-        System.out.println("Lista parole distinte: " + paroleDistinte);
-        System.out.println("Numero parole distinte: " + paroleDistinte.size());
 
 
     }
