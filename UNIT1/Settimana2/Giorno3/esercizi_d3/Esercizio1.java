@@ -21,12 +21,11 @@ public class Esercizio1 {
         prodotti.add(new Product(7L, "Set regalo per neonati", "Baby", 30));
         prodotti.add(new Product(8L, "Il Codice da Vinci", "Books", 25));
 
-        // Eserizio 1
+        // Esercizio 1
 
-        List<Product> libriCostosi = prodotti.stream().filter((prodotto)->prodotto.getCategory().equals("Books")).filter((libro->libro.getPrice() > 150)).collect(Collectors.toList());
-        System.out.println(libriCostosi);
+        List<Product> libriCostosi = prodotti.stream().filter((prodotto)->prodotto.getCategory().equals("Books") && prodotto.getPrice()> 100).collect((Collectors.toList()));
 
-
+        libriCostosi.forEach(System.out::println);  //reference method
 
 
 

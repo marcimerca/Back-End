@@ -51,6 +51,9 @@ public class Esercizio2 {
 
         System.out.println(ordiniBaby);
 
+       //anyMatch ritorn true se almeno un prodotto soddisfa la condizione o false,
+        // allMatch verifica che tutti soddisfano la condizione
+
 
     }
 }

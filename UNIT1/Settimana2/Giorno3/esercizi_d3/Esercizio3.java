@@ -28,6 +28,14 @@ public class Esercizio3 {
 
         System.out.println(prodottiBoys);
 
+        //con peek
+
+        /*List<Product> prodottiBoys = prodotti.stream()
+                .filter(product -> product.getCategory().equals("Boys"))
+                .peek(product -> product.setPrice(product.getPrice() * 0.9))
+                .collect(Collectors.toList());
+*/
+
 
     }
 }
