@@ -7,6 +7,7 @@ import classi_base.Product;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Esercizio2 {
@@ -44,7 +45,7 @@ public class Esercizio2 {
         ordiniCompleti.add(ordine2);
         ordiniCompleti.add(ordine3);
 
-        ArrayList<Order> ordiniBaby = (ArrayList<Order>) ordiniCompleti.stream()
+       List<Order> ordiniBaby =  ordiniCompleti.stream()
                 .filter(ordine -> ordine.getProducts().stream().anyMatch(product -> product.getCategory().equals("Baby")))
                 .collect(Collectors.toList());
 
